@@ -7,15 +7,17 @@ import 'package:food_ordering_app/screens/details/widgets/title_price_rating.dar
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ItemImage(
-          imgSrc: "assets/images/burger.png",
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            ItemImage(
+              imgSrc: "assets/images/burger.png",
+            ),
+            ItemInfo(),
+          ],
         ),
-        Expanded(
-          child: ItemInfo(),
-        ),
-      ],
+      ),
     );
   }
 }
@@ -54,7 +56,7 @@ class ItemInfo extends StatelessWidget {
               height: 1.5,
             ),
           ),
-          SizedBox(height: size.height * 0.1),
+          SizedBox(height: size.height * 0.05),
           OrderButton(
             size: size,
             press: () {},

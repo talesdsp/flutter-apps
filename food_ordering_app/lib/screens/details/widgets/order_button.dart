@@ -15,9 +15,7 @@ class OrderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.all(20),
       width: size.width * 0.8,
-      // it will cover 80% of total width
       decoration: BoxDecoration(
         color: kPrimaryColor,
         borderRadius: BorderRadius.circular(10),
