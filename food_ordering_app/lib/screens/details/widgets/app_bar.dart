@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-AppBar detailsAppBar() {
+AppBar detailsAppBar(BuildContext context) {
   return AppBar(
     elevation: 0,
     leading: IconButton(
@@ -9,7 +9,9 @@ AppBar detailsAppBar() {
         Icons.arrow_back,
         color: Colors.white,
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pop(context);
+      },
     ),
     actions: <Widget>[
       IconButton(
