@@ -12,7 +12,6 @@ class BottomNavBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 35),
       height: 75,
       width: double.infinity,
-      // double.infinity means it cove the available width
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

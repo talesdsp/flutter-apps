@@ -15,7 +15,6 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This size provide you the total height and width of the screen
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(left: 20, right: 15, top: 20, bottom: 20),
@@ -48,7 +47,6 @@ class ItemCard extends StatelessWidget {
                   child: SvgPicture.asset(
                     svgSrc,
                     width: size.width * 0.18,
-                    // size.width * 0.18 means it use 18% of total width
                   ),
                 ),
                 Text(title),
