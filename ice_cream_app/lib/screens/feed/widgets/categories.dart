@@ -13,9 +13,9 @@ class _CategoriesState extends State<Categories> {
     "Cup",
     "Candy",
     "Cones",
-    "Cup",
-    "Candy",
-    "Cones"
+    "Sundae",
+    "Milkshake",
+    "Smoothie",
   ];
   final List<IconData> iceCreamIcons = [
     Icons.cake,
@@ -30,7 +30,7 @@ class _CategoriesState extends State<Categories> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
 
     return Container(
       width: size.width,
@@ -48,47 +48,50 @@ class _CategoriesState extends State<Categories> {
               selectedIndex = index;
             });
           },
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(
-                  bottom: kDefaultPadding / 2,
-                  left: kDefaultPadding,
-                  right:
-                      index == iceCreamShapes.length - 1 ? kDefaultPadding : 0,
-                ),
-                padding: EdgeInsets.symmetric(
-                  horizontal: kDefaultPadding / 1.4,
-                  vertical: kDefaultPadding / 1.4,
-                ),
-                alignment: Alignment.center,
-                child: Icon(
-                  iceCreamIcons[index],
-                  color: selectedIndex == index ? kWhite : kGrey,
-                ),
-                decoration: BoxDecoration(
-                  color: selectedIndex == index ? kHotPink : kWhite,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12),
+          child: Padding(
+            padding: EdgeInsets.only(
+              left: kDefaultPadding,
+              right: index == iceCreamShapes.length - 1 ? kDefaultPadding : 0,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(
+                    bottom: kDefaultPadding / 2,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10,
+                  clipBehavior: Clip.none,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: kDefaultPadding / 1.4,
+                    vertical: kDefaultPadding / 1.4,
+                  ),
+                  child: Icon(
+                    iceCreamIcons[index],
+                    color: selectedIndex == index ? kWhite : kGrey,
+                  ),
+                  decoration: BoxDecoration(
+                    color: selectedIndex == index ? kHotPink : kWhite,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(12),
                     ),
-                  ],
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 10,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Text(
-                iceCreamShapes[index],
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: selectedIndex == index ? kHotPink : kGrey,
-                  fontWeight: FontWeight.bold,
+                Text(
+                  iceCreamShapes[index],
+                  style: TextStyle(
+                    color: selectedIndex == index ? kHotPink : kGrey,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
