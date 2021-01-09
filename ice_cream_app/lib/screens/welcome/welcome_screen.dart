@@ -88,15 +88,13 @@ class _BodyState extends State<Body> {
         fit: StackFit.expand,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(
-              kDefaultPadding * 4,
-            ),
+            padding: const EdgeInsets.only(top: 40.0),
             child: Text(
-              "Ice Cream Shop",
+              "Ice Cream\nShop",
               textAlign: TextAlign.center,
               style: GoogleFonts.lobster(
                 color: kWhite,
-                fontSize: 34,
+                fontSize: 48,
               ),
             ),
           ),
