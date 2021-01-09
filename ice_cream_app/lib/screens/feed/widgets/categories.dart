@@ -34,7 +34,7 @@ class _CategoriesState extends State<Categories> {
 
     return Container(
       width: size.width,
-      height: 100,
+      height: 130,
       margin: EdgeInsets.only(
         top: kDefaultPadding,
       ),
@@ -58,16 +58,13 @@ class _CategoriesState extends State<Categories> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(
-                    bottom: kDefaultPadding / 2,
-                  ),
+                  height: 70,
+                  width: 70,
                   clipBehavior: Clip.none,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding / 1.4,
-                    vertical: kDefaultPadding / 1.4,
-                  ),
+                  margin: EdgeInsets.only(bottom: kDefaultPadding / 2),
                   child: Icon(
                     iceCreamIcons[index],
+                    size: 32,
                     color: selectedIndex == index ? kWhite : kGrey,
                   ),
                   decoration: BoxDecoration(
@@ -88,6 +85,7 @@ class _CategoriesState extends State<Categories> {
                   style: TextStyle(
                     color: selectedIndex == index ? kHotPink : kGrey,
                     fontWeight: FontWeight.bold,
+                    fontSize: 16,
                   ),
                 ),
               ],

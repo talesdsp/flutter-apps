@@ -20,18 +20,21 @@ class TopButtons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          _navButton(leftIcon, theme),
-          _navButton(rightIcon, theme)
+          theme == "market"
+              ? _navButton(leftIcon, "primary", () {
+                  Navigator.pop(context);
+                })
+              : _navButton(leftIcon, theme, () {
+                  Navigator.pop(context);
+                }),
+          _navButton(rightIcon, theme, () {})
         ],
       ),
     );
   }
 }
 
-GestureDetector _navButton(
-  IconData icon,
-  String theme,
-) {
+GestureDetector _navButton(IconData icon, String theme, Function handlePress) {
   Color buttonColor() {
     if (theme == 'primary')
       return kWhite;
@@ -47,6 +50,7 @@ GestureDetector _navButton(
   }
 
   return GestureDetector(
+    onTap: handlePress,
     child: Container(
       padding: EdgeInsets.all(
         kDefaultPadding / 2.4,
@@ -58,9 +62,9 @@ GestureDetector _navButton(
         color: buttonColor(),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: kLightPink,
-            offset: Offset(1, 3),
-            blurRadius: 20,
+            color: Colors.black12,
+            offset: Offset(2, 2),
+            blurRadius: 10,
           ),
         ],
       ),
@@ -69,6 +73,5 @@ GestureDetector _navButton(
         color: iconColor(),
       ),
     ),
-    onTap: () {},
   );
 }
