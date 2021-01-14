@@ -25,6 +25,8 @@ class _DetailScreenState extends State<DetailScreen> {
   int _counter;
   String _selected;
 
+  int _r1, _r2, _r3, _r4;
+
   @override
   void initState() {
     super.initState();
@@ -32,6 +34,11 @@ class _DetailScreenState extends State<DetailScreen> {
     _counter = 1;
 
     _textSplit = this.widget.food.title.split(" ");
+
+    _r1 = Random().nextInt(300);
+    _r2 = Random().nextInt(300);
+    _r3 = Random().nextInt(300);
+    _r4 = Random().nextInt(10);
 
     Timer(
         Duration(
@@ -206,7 +213,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           listItem(
                             context: context,
                             title: 'weight',
-                            number: Random().nextInt(300),
+                            number: _r1,
                             suffix: 'g',
                             select: _select,
                             selected: _selected,
@@ -214,7 +221,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           listItem(
                             context: context,
                             title: 'calories',
-                            number: Random().nextInt(300),
+                            number: _r2,
                             suffix: 'cal',
                             select: _select,
                             selected: _selected,
@@ -222,7 +229,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           listItem(
                             context: context,
                             title: 'vitamin A',
-                            number: Random().nextInt(300),
+                            number: _r3,
                             suffix: 'vit',
                             select: _select,
                             selected: _selected,
@@ -230,7 +237,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           listItem(
                             context: context,
                             title: 'sugar',
-                            number: Random().nextInt(10),
+                            number: _r4,
                             suffix: 'g',
                             select: _select,
                             selected: _selected,

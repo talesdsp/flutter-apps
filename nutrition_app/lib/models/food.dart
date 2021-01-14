@@ -35,7 +35,7 @@ List<Food> foods = [
     price: 21.10,
   ),
   Food(
-    title: "Ipsum",
+    title: "Ipsum Bowl",
     image: "assets/images/plate6.png",
     price: 29.30,
   ),
